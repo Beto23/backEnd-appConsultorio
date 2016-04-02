@@ -30,6 +30,11 @@ $app->post('/postDetalleConsultas','postDetalleConsultas');
 
 
 $app->put('/putDoctor','putDoctor');
+$app->put('/putPaciente','putPaciente');
+$app->put('/putConsulta','putConsulta');
+$app->put('/putDetalleConsulta','putDetalleConsulta');
+
+
 $app->delete('/deleteDoctor', 'deleteDoctor');
 $app->delete('/deleteEspecialidad', 'deleteEspecialidad');
 $app->delete('/deletePaciente', 'deletePaciente');
