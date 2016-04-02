@@ -42,6 +42,7 @@ $app->delete('/deleteConsulta', 'deleteConsulta');
 $app->delete('/deleteDetalleConsulta', 'deleteDetalleConsulta');
 
 $app->get('/getEspecialidadByDoctores', 'getEspecialidadByDoctores');
+$app->get('/getConsultasByDoctor/:id', 'getConsultasByDoctor');
 $app->get('/getPacientes', 'getPacientes');
 $app->get('/getAllConsultas', 'getAllConsultas');
 
