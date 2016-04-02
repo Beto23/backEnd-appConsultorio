@@ -26,7 +26,7 @@ $app->post('/postDoctores','postDoctores');
 $app->post('/postEspecialidad','postEspecialidad');
 $app->post('/postPacientes','postPacientes');
 $app->post('/postConsultas','postConsultas');
-
+$app->post('/postDetalleConsultas','postDetalleConsultas');
 
 
 $app->put('/putDoctor','putDoctor');
@@ -34,6 +34,8 @@ $app->delete('/deleteDoctor', 'deleteDoctor');
 $app->delete('/deleteEspecialidad', 'deleteEspecialidad');
 $app->delete('/deletePaciente', 'deletePaciente');
 $app->delete('/deleteConsulta', 'deleteConsulta');
+$app->delete('/deleteDetalleConsulta', 'deleteDetalleConsulta');
+
 
 
 $app->run();

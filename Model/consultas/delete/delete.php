@@ -25,5 +25,28 @@
     }
     echo json_encode($answer);
   }
+  
+  //tabla detalle consulta
+  function deleteDetalleConsulta(){
+    $request = \Slim\Slim::getInstance()->request();
+    $doc = json_decode($request->getBody());
+    $sql_query = "DELETE
+            FROM
+              detalle_consulta
+            WHERE
+              id_detalle_consulta = '$doc->id_detalle_consulta'";
+    try {
+      $db = getConnection();
+      $stmt = $db->prepare($sql_query);
+      $stmt->bindParam("id_detalle_consulta", $doc->id_detalle_consulta);
+      $stmt->execute();
+      $db = null;
+      $answer = array('estatus'=>'ok', 'msj'=> 'detalle de la consulta eliminada exitosamente');
+    }
+    catch(PDOException $e) {
+        $answer = array( 'estatus'=>'error','msj' =>  $e->getMessage());
+    }
+    echo json_encode($answer);
+  }
 
  ?>
