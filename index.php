@@ -20,9 +20,13 @@
               header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
       }
 
-$app->post('/addDoctores','addDoctores');
+$app->post('/postDoctores','postDoctores');
+$app->post('/postEspecialidad','postEspecialidad');
+
 $app->put('/putDoctor','putDoctor');
 $app->delete('/deleteDoctor', 'deleteDoctor');
+$app->delete('/deleteEspecialidad', 'deleteEspecialidad');
+
 
 $app->run();
 
