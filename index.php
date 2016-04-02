@@ -3,6 +3,7 @@
   require './Config/db.php';
   require './Model/doctores/doctores.php';
   require './Model/pacientes/pacientes.php';
+  require './Model/consultas/consultas.php';
 
   \Slim\Slim::registerAutoloader();
   $app = new \Slim\Slim();
@@ -24,12 +25,15 @@
 $app->post('/postDoctores','postDoctores');
 $app->post('/postEspecialidad','postEspecialidad');
 $app->post('/postPacientes','postPacientes');
+$app->post('/postConsultas','postConsultas');
+
 
 
 $app->put('/putDoctor','putDoctor');
 $app->delete('/deleteDoctor', 'deleteDoctor');
 $app->delete('/deleteEspecialidad', 'deleteEspecialidad');
 $app->delete('/deletePaciente', 'deletePaciente');
+$app->delete('/deleteConsulta', 'deleteConsulta');
 
 
 $app->run();
