@@ -23,7 +23,7 @@
     function putDetalleConsulta() {
         $request = \Slim\Slim::getInstance()->request();
         $req = json_decode($request->getBody());
-        $sql = "UPDATE detalle_consulta SET id_consulta=:id_consulta, motivo=:motivo, sintomas=:sintomas, diagnostico=:diagnostico, medicamento=:medicamento WHERE id_detalle_consulta='$req->id_detalle_consulta'";
+        $sql = "UPDATE detalle_consulta SET id_consulta=:id_consulta, motivo=:motivo, sintomas=:sintomas, diagnostico=:diagnostico, medicamento=:medicamento, total_consulta=:total_consulta WHERE id_detalle_consulta='$req->id_detalle_consulta'";
         try {
             $db = getConnection();
             $stmt = $db->prepare($sql);
@@ -32,6 +32,7 @@
             $stmt->bindParam("sintomas", $req->sintomas);
             $stmt->bindParam("diagnostico", $req->diagnostico);
             $stmt->bindParam("medicamento", $req->medicamento);
+            $stmt->bindParam("total_consulta", $req->total_consulta);
             $stmt->execute();
             $db = null;
             $answer = array('estatus' => 'ok', 'msj' => 'detalle de consulta modificada exitosamente.');

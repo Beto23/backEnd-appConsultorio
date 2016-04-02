@@ -25,7 +25,7 @@ echo json_encode($answer);
 function postDetalleConsultas() {
     $request = \Slim\Slim::getInstance()->request();
     $doc = json_decode($request->getBody());
-    $sql = "INSERT INTO detalle_consulta (id_consulta, motivo, sintomas, diagnostico, medicamento) VALUES (:id_consulta, :motivo, :sintomas, :diagnostico, :medicamento)";
+    $sql = "INSERT INTO detalle_consulta (id_consulta, motivo, sintomas, diagnostico, medicamento, total_consulta) VALUES (:id_consulta, :motivo, :sintomas, :diagnostico, :medicamento, :total_consulta)";
     try {
       $db = getConnection();
       $stmt = $db->prepare($sql);
@@ -34,6 +34,7 @@ function postDetalleConsultas() {
       $stmt->bindParam("sintomas", $doc->sintomas);
       $stmt->bindParam("diagnostico", $doc->diagnostico);
       $stmt->bindParam("medicamento", $doc->medicamento);
+      $stmt->bindParam("total_consulta", $doc->total_consulta);
       $stmt->execute();
       $db = null;
       $answer = array('estatus' => 'ok' , 'msj'=> 'detaller de consulta creada exitosamente');
