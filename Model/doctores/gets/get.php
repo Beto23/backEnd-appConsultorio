@@ -1,7 +1,7 @@
 <?php 
 
     function getEspecialidadByDoctores() { 
-        $sql_query = "SELECT doctores.id_doctor, doctores.nombre, especialidad_doctor.especialidad FROM especialidad_doctor, doctores WHERE doctores.id_especialidad = especialidad_doctor.id_especialidad";
+        $sql_query = "SELECT doctores.id_doctor, doctores.nombre_doc, doctores.paterno_doc, doctores.materno_doc, doctores.telefono_doc, doctores.correo_doc, especialidad_doctor.especialidad FROM especialidad_doctor, doctores WHERE doctores.id_especialidad = especialidad_doctor.id_especialidad";
             try {
                 $dbCon = getConnection();
                 $stmt   = $dbCon->query($sql_query);
