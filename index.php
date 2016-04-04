@@ -45,7 +45,7 @@ $app->get('/getEspecialidadByDoctores', 'getEspecialidadByDoctores');
 $app->get('/getConsultasByDoctor/:id', 'getConsultasByDoctor');
 $app->get('/getPacientes', 'getPacientes');
 $app->get('/getAllConsultas', 'getAllConsultas');
-
+$app->get('/getEspecialidades', 'getEspecialidades');
 
 $app->run();
 
